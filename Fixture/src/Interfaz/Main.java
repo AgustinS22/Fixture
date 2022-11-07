@@ -1,43 +1,44 @@
 package Interfaz;
 import java.util.LinkedList;
+import java.util.Scanner;
 
 import Logica.*;
 
 class Main {
 
 	public static void main(String[] args) {
-		Pais ecuador = new Pais("Ecuador", 0, true, "A", 0, 0, 0, 0);
-		Pais qatar = new Pais("Qatar", 0, true, "A", 0, 0, 0, 0);
-		Pais senegal = new Pais("Senegal", 0, true, "A", 0, 0, 0, 0);
-		Pais holanda = new Pais("Holanda", 0, true, "A", 0, 0, 0, 0);
-		Pais inglaterra = new Pais("Inglaterra", 0, true, "B", 0, 0, 0, 0);
-		Pais iran = new Pais("Iran", 0, true, "B", 0, 0, 0, 0);
-		Pais eeuu = new Pais("EE.UU", 0, true, "B", 0, 0, 0, 0);
-		Pais gales = new Pais("Gales", 0, true, "B", 0, 0, 0, 0);
-		Pais argentina = new Pais("Argentina", 0, true, "C", 0, 0, 0, 0);
-		Pais arabia = new Pais("Arabia Saudita", 0, true, "C", 0, 0, 0, 0);
-		Pais mexico = new Pais("Mexico", 0, true, "C", 0, 0, 0, 0);
-		Pais polonia = new Pais("Polonia", 0, true, "C", 0, 0, 0, 0);
-		Pais francia = new Pais("Francia", 0, true, "D", 0, 0, 0, 0);
-		Pais australia = new Pais("Australia", 0, true, "D", 0, 0, 0, 0);
-		Pais dinamarca = new Pais("Dinamarca", 0, true, "D", 0, 0, 0, 0);
-		Pais tunez = new Pais("Tunez", 0, true, "D", 0, 0, 0, 0);
-		Pais españa = new Pais("España", 0, true, "E", 0, 0, 0, 0);
-		Pais alemania = new Pais("Alemania", 0, true, "E", 0, 0, 0, 0);
-		Pais costarica = new Pais("Costa Rica", 0, true, "E", 0, 0, 0, 0);
-		Pais japon = new Pais("Japon", 0, true, "E", 0, 0, 0, 0);
-		Pais belgica = new Pais("Belgica", 0, true, "F", 0, 0, 0, 0);
-		Pais canada = new Pais("Canada", 0, true, "F", 0, 0, 0, 0);
-		Pais marruecos = new Pais("Marruecos", 0, true, "F", 0, 0, 0, 0);
-		Pais croacia = new Pais("Croacia", 0, true, "F", 0, 0, 0, 0);
-		Pais brasil = new Pais("Brasil", 0, true, "G", 0, 0, 0, 0);
-		Pais serbia = new Pais("Serbia", 0, true, "G", 0, 0, 0, 0);
-		Pais suiza = new Pais("Suiza", 0, true, "G", 0, 0, 0, 0);
-		Pais camerun = new Pais("Camerun", 0, true, "G", 0, 0, 0, 0);
-		Pais portugal = new Pais("Portugal", 0, true, "H", 0, 0, 0, 0);
-		Pais ghana = new Pais("Ghana", 0, true, "H", 0, 0, 0, 0);
-		Pais uruguay = new Pais("Uruguay", 0, true, "H", 0, 0, 0, 0);
-		Pais corea = new Pais("Corea del Sur", 0, true, "H", 0, 0, 0, 0);
+		Pais ecuador = new Pais("Ecuador", 0, true, "A", 0, 0, 0, 0, "ECU");
+		Pais qatar = new Pais("Qatar", 0, true, "A", 0, 0, 0, 0, "QAT");
+		Pais senegal = new Pais("Senegal", 0, true, "A", 0, 0, 0, 0, "SEN");
+		Pais holanda = new Pais("Holanda", 0, true, "A", 0, 0, 0, 0, "HOL");
+		Pais inglaterra = new Pais("Inglaterra", 0, true, "B", 0, 0, 0, 0, "ING");
+		Pais iran = new Pais("Iran", 0, true, "B", 0, 0, 0, 0, "IRN");
+		Pais eeuu = new Pais("EE.UU", 0, true, "B", 0, 0, 0, 0, "USA");
+		Pais gales = new Pais("Gales", 0, true, "B", 0, 0, 0, 0, "GAL");
+		Pais argentina = new Pais("Argentina", 0, true, "C", 0, 0, 0, 0, "ARG");
+		Pais arabia = new Pais("Arabia Saudita", 0, true, "C", 0, 0, 0, 0, "ARA");
+		Pais mexico = new Pais("Mexico", 0, true, "C", 0, 0, 0, 0, "MEX");
+		Pais polonia = new Pais("Polonia", 0, true, "C", 0, 0, 0, 0, "POL");
+		Pais francia = new Pais("Francia", 0, true, "D", 0, 0, 0, 0, "FRA");
+		Pais australia = new Pais("Australia", 0, true, "D", 0, 0, 0, 0, "AUS");
+		Pais dinamarca = new Pais("Dinamarca", 0, true, "D", 0, 0, 0, 0, "DIN");
+		Pais tunez = new Pais("Tunez", 0, true, "D", 0, 0, 0, 0, "TUN");
+		Pais españa = new Pais("España", 0, true, "E", 0, 0, 0, 0, "ESP");
+		Pais alemania = new Pais("Alemania", 0, true, "E", 0, 0, 0, 0, "ALE");
+		Pais costarica = new Pais("Costa Rica", 0, true, "E", 0, 0, 0, 0, "CRC");
+		Pais japon = new Pais("Japon", 0, true, "E", 0, 0, 0, 0, "JAP");
+		Pais belgica = new Pais("Belgica", 0, true, "F", 0, 0, 0, 0, "BEL");
+		Pais canada = new Pais("Canada", 0, true, "F", 0, 0, 0, 0, "CAN");
+		Pais marruecos = new Pais("Marruecos", 0, true, "F", 0, 0, 0, 0, "MAR");
+		Pais croacia = new Pais("Croacia", 0, true, "F", 0, 0, 0, 0, "CRO");
+		Pais brasil = new Pais("Brasil", 0, true, "G", 0, 0, 0, 0, "BRA");
+		Pais serbia = new Pais("Serbia", 0, true, "G", 0, 0, 0, 0, "SER");
+		Pais suiza = new Pais("Suiza", 0, true, "G", 0, 0, 0, 0, "SUI");
+		Pais camerun = new Pais("Camerun", 0, true, "G", 0, 0, 0, 0, "CAM");
+		Pais portugal = new Pais("Portugal", 0, true, "H", 0, 0, 0, 0, "POR");
+		Pais ghana = new Pais("Ghana", 0, true, "H", 0, 0, 0, 0, "GHA");
+		Pais uruguay = new Pais("Uruguay", 0, true, "H", 0, 0, 0, 0, "URU");
+		Pais corea = new Pais("Corea del Sur", 0, true, "H", 0, 0, 0, 0, "COR");
 		
 		
 		LinkedList<Pais> paises = new LinkedList<Pais>(); 
@@ -118,13 +119,67 @@ class Main {
 		System.out.println("GRUPO F: " + Grupof);
 		System.out.println("GRUPO G: " + Grupog);
 		System.out.println("GRUPO H: " + Grupoh);*/
-		System.out.println(Grupoa.get(0));
+
 		
 		/*
 		 Equipo 1 - Equipo 2 // Equipo 1 - Equipo 3 // Equipo 1 - Equipo 4 // Equipo 2 - Equipo 3 // Equipo 2 - Equipo 4 // Equipo 3 - Equipo 4 
 		*/
 		// 0, 1, 2, 3
 		
+		LinkedList<Partido> Partidoa = new LinkedList<Partido>();
+		LinkedList<Partido> Partidob = new LinkedList<Partido>();
+		LinkedList<Partido> Partidoc = new LinkedList<Partido>();
+		LinkedList<Partido> Partidod = new LinkedList<Partido>();
+		LinkedList<Partido> Partidoe = new LinkedList<Partido>();
+		LinkedList<Partido> Partidof = new LinkedList<Partido>();
+		LinkedList<Partido> Partidog = new LinkedList<Partido>();
+		LinkedList<Partido> Partidoh = new LinkedList<Partido>();
+		int p=0;
+		int ids;
+		Partido [] partidoa = new Partido[6];
+		Partido [] partidob = new Partido[6];
+		Partido [] partidoc = new Partido[6];
+		Partido [] partidod = new Partido[6];
+		Partido [] partidoe = new Partido[6];
+		Partido [] partidof = new Partido[6];
+		Partido [] partidog = new Partido[6];
+		Partido [] partidoh = new Partido[6];
+		Grupos (p, partidoa, Grupoa, ids=0, Partidoa);
+		Grupos (p, partidob, Grupob, ids=6, Partidob);
+		Grupos (p, partidoc, Grupoc, ids=12, Partidoc);
+		Grupos (p, partidod, Grupod, ids=18, Partidod);
+		Grupos (p, partidoe, Grupoe, ids=24, Partidoe);
+		Grupos (p, partidof, Grupof, ids=30, Partidof);
+		Grupos (p, partidog, Grupog, ids=36, Partidog);
+		Grupos (p, partidoh, Grupoh, ids=42, Partidoh);
+		
+		String grupo="";
+		verRankingGrupo(paises, grupo);
+				
+		/* for (int i =0; i <6; i++) {
+			System.out.println(Partidoa.get(i).getId()); 
+		}
+		for (int i =0; i <6; i++) {
+			System.out.println(Partidob.get(i).getId()); 
+		}
+		for (int i =0; i <6; i++) {
+			System.out.println(Partidoc.get(i).getId()); 
+		}
+		for (int i =0; i <6; i++) {
+			System.out.println(Partidod.get(i).getId()); 
+		}
+		for (int i =0; i <6; i++) {
+			System.out.println(Partidoe.get(i).getId()); 
+		}
+		for (int i =0; i <6; i++) {
+			System.out.println(Partidof.get(i).getId()); 
+		}
+		for (int i =0; i <6; i++) {
+			System.out.println(Partidog.get(i).getId()); 
+		}
+		for (int i =0; i <6; i++) {
+			System.out.println(Partidoh.get(i).getId()); 
+		} */
 
 		/*
 		SISTEMA DE PARTIDOS / GRUPOS / LISTAS
@@ -158,5 +213,52 @@ class Main {
 		*/
 	}
 	
+	public static void Grupos(int p, Partido [] partido, LinkedList<Pais> Grupo, int id, LinkedList<Partido> partidos) {
+		partido = new Partido[6];
+		p=0;
+			for (int i = 1; i<4; i++) {
+				if (i != 0 && p <3) {
+					id++;
+					partido[p] = new Partido(Grupo.get(0), Grupo.get(i), 0, 0, 0, id);
+					partidos.add(partido[p]);
+					p++;
+					if (p == 3){
+						i = 1;
+					}
+				} else if (i != 0 && i != 1 && p!= 5 ) {
+					id++;
+					partido[p] = new Partido(Grupo.get(1), Grupo.get(i), 0, 0, 0, id);
+					partidos.add(partido[p]);
+					p++;
+					if (p == 5) {
+						i = 2;
+					}
+				} else {
+					id++;
+					partido[p] = new Partido(Grupo.get(2), Grupo.get(i), 0, 0, 0, id);
+					partidos.add(partido[p]);
+				}
+				
+		}
 
-}
+	}
+	// Hacer ranking de mundial tambien
+	public static void verRankingGrupo(LinkedList<Pais> grupos, String grupo) {
+		Scanner entrada = new Scanner(System.in);
+		System.out.println("Por favor ingrese el grupo del que desea saber el ranking");
+		grupo = entrada.nextLine(); 
+		
+		for (Pais pais : grupos) {
+			if (pais.getGrupo().equalsIgnoreCase(grupo)) {
+				System.out.println("Nombre\tPuntos\tPG\tPP\tPE\n" + pais.getAbr() + "\t" + pais.getPuntos() + "\t" + pais.getPg() + "\t" + pais.getPp() + "\t" + pais.getPe());
+			}
+		}		
+		}
+	
+	public static void jugarPartido(LinkedList<Partido> partidos, String grupo) {
+		
+	}
+	
+	}
+
+

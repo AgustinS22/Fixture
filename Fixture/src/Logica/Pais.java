@@ -12,7 +12,8 @@ public class Pais {
 	private int pp;
 	private int pe;
 	private int[] resultado = {0,0,0,0,0,0,0};
-	public Pais(String nombre, int cant_gol, boolean clasificado, String grupo, int puntos, int pg, int pp, int pe) {
+	private String abr;
+	public Pais(String nombre, int cant_gol, boolean clasificado, String grupo, int puntos, int pg, int pp, int pe, String abr) {
 		super();
 		this.nombre = nombre;
 		this.cant_gol = cant_gol;
@@ -21,7 +22,14 @@ public class Pais {
 		this.puntos = puntos;
 		this.pg = pg;
 		this.pp = pp;
-		this.pe = pe;		
+		this.pe = pe;	
+		this.abr = abr;
+	}
+	public String getAbr() {
+		return abr;
+	}
+	public void setAbr(String abr) {
+		this.abr = abr;
 	}
 	public int getPuntos() {
 		return puntos;
