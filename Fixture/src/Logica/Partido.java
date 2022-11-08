@@ -54,6 +54,6 @@ public class Partido {
 	}
 	@Override
 	public String toString() {
-		return "Partido:\n" + pais + " - " + pais2;
+		return pais + " - " + pais2;
 	}
 }

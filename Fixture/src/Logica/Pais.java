@@ -11,12 +11,15 @@ public class Pais {
 	private int pg;
 	private int pp;
 	private int pe;
+	private int goles_favor;
+	private int goles_contra;
+	private int diferencia_goles;
 	private int[] resultado = {0,0,0,0,0,0,0};
 	private String abr;
-	public Pais(String nombre, int cant_gol, boolean clasificado, String grupo, int puntos, int pg, int pp, int pe, String abr) {
+	public Pais(String nombre, int cant_gol, boolean clasificado, String grupo, int puntos, int pg, int pp, int pe, String abr, int goles_favor,int goles_contra) {
 		super();
 		this.nombre = nombre;
-		this.cant_gol = cant_gol;
+		this.cant_gol = goles_favor;
 		this.clasificado = clasificado;
 		this.grupo = grupo;
 		this.puntos = puntos;
@@ -24,6 +27,27 @@ public class Pais {
 		this.pp = pp;
 		this.pe = pe;	
 		this.abr = abr;
+		this.goles_favor = goles_favor;
+		this.goles_contra = goles_contra;
+		this.diferencia_goles = goles_favor - goles_contra;
+	}
+	public int getGoles_favor() {
+		return goles_favor;
+	}
+	public void setGoles_favor(int goles_favor) {
+		this.goles_favor = goles_favor;
+	}
+	public int getGoles_contra() {
+		return goles_contra;
+	}
+	public void setGoles_contra(int goles_contra) {
+		this.goles_contra = goles_contra;
+	}
+	public int getDiferencia_goles() {
+		return diferencia_goles;
+	}
+	public void setDiferencia_goles(int diferencia_goles) {
+		this.diferencia_goles = diferencia_goles;
 	}
 	public String getAbr() {
 		return abr;
