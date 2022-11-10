@@ -1,5 +1,9 @@
 package Interfaz;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 import Logica.*;
@@ -7,38 +11,38 @@ import Logica.*;
 class Main {
 
 	public static void main(String[] args) {
-		Pais ecuador = new Pais("Ecuador", 0, true, "A", 0, 0, 0, 0, "ECU", 0, 0);
-		Pais qatar = new Pais("Qatar", 0, true, "A", 0, 0, 0, 0, "QAT", 0, 0);
-		Pais senegal = new Pais("Senegal", 0, true, "A", 0, 0, 0, 0, "SEN", 0, 0);
-		Pais holanda = new Pais("Holanda", 0, true, "A", 0, 0, 0, 0, "HOL", 0, 0);
-		Pais inglaterra = new Pais("Inglaterra", 0, true, "B", 0, 0, 0, 0, "ING", 0, 0);
-		Pais iran = new Pais("Iran", 0, true, "B", 0, 0, 0, 0, "IRN", 0, 0);
-		Pais eeuu = new Pais("EE.UU", 0, true, "B", 0, 0, 0, 0, "USA", 0, 0);
-		Pais gales = new Pais("Gales", 0, true, "B", 0, 0, 0, 0, "GAL", 0, 0);
-		Pais argentina = new Pais("Argentina", 0, true, "C", 0, 0, 0, 0, "ARG", 0, 0);
-		Pais arabia = new Pais("Arabia Saudita", 0, true, "C", 0, 0, 0, 0, "ARA", 0, 0);
-		Pais mexico = new Pais("Mexico", 0, true, "C", 0, 0, 0, 0, "MEX", 0, 0);
-		Pais polonia = new Pais("Polonia", 0, true, "C", 0, 0, 0, 0, "POL", 0, 0);
-		Pais francia = new Pais("Francia", 0, true, "D", 0, 0, 0, 0, "FRA", 0, 0);
-		Pais australia = new Pais("Australia", 0, true, "D", 0, 0, 0, 0, "AUS", 0, 0);
-		Pais dinamarca = new Pais("Dinamarca", 0, true, "D", 0, 0, 0, 0, "DIN", 0, 0);
-		Pais tunez = new Pais("Tunez", 0, true, "D", 0, 0, 0, 0, "TUN", 0, 0);
-		Pais españa = new Pais("España", 0, true, "E", 0, 0, 0, 0, "ESP", 0, 0);
-		Pais alemania = new Pais("Alemania", 0, true, "E", 0, 0, 0, 0, "ALE", 0, 0);
-		Pais costarica = new Pais("Costa Rica", 0, true, "E", 0, 0, 0, 0, "CRC", 0, 0);
-		Pais japon = new Pais("Japon", 0, true, "E", 0, 0, 0, 0, "JAP", 0, 0);
-		Pais belgica = new Pais("Belgica", 0, true, "F", 0, 0, 0, 0, "BEL", 0, 0);
-		Pais canada = new Pais("Canada", 0, true, "F", 0, 0, 0, 0, "CAN", 0, 0);
-		Pais marruecos = new Pais("Marruecos", 0, true, "F", 0, 0, 0, 0, "MAR", 0, 0);
-		Pais croacia = new Pais("Croacia", 0, true, "F", 0, 0, 0, 0, "CRO", 0, 0);
-		Pais brasil = new Pais("Brasil", 0, true, "G", 0, 0, 0, 0, "BRA", 0, 0);
-		Pais serbia = new Pais("Serbia", 0, true, "G", 0, 0, 0, 0, "SER", 0, 0);
-		Pais suiza = new Pais("Suiza", 0, true, "G", 0, 0, 0, 0, "SUI", 0, 0);
-		Pais camerun = new Pais("Camerun", 0, true, "G", 0, 0, 0, 0, "CAM", 0, 0);
-		Pais portugal = new Pais("Portugal", 0, true, "H", 0, 0, 0, 0, "POR", 0, 0);
-		Pais ghana = new Pais("Ghana", 0, true, "H", 0, 0, 0, 0, "GHA", 0, 0);
-		Pais uruguay = new Pais("Uruguay", 0, true, "H", 0, 0, 0, 0, "URU", 0, 0);
-		Pais corea = new Pais("Corea del Sur", 0, true, "H", 0, 0, 0, 0, "COR", 0, 0);
+		Pais ecuador = new Pais("Ecuador", 0, true, "A", 3, 0, 0, 0, "ECU", 0, 0, 1);
+		Pais qatar = new Pais("Qatar", 0, true, "A", 3, 0, 0, 0, "QAT", 0, 0, 10);
+		Pais senegal = new Pais("Senegal", 0, true, "A", 3, 0, 0, 0, "SEN", 0, 0, 23);
+		Pais holanda = new Pais("Holanda", 0, true, "A", 3, 0, 0, 0, "HOL", 0, 0, -4);
+		Pais inglaterra = new Pais("Inglaterra", 0, true, "B", 0, 0, 0, 0, "ING", 0, 0, 0);
+		Pais iran = new Pais("Iran", 0, true, "B", 0, 0, 0, 0, "IRN", 0, 0, 0);
+		Pais eeuu = new Pais("EE.UU", 0, true, "B", 0, 0, 0, 0, "USA", 0, 0, 0);
+		Pais gales = new Pais("Gales", 0, true, "B", 0, 0, 0, 0, "GAL", 0, 0, 0);
+		Pais argentina = new Pais("Argentina", 0, true, "C", 0, 0, 0, 0, "ARG", 0, 0, 0);
+		Pais arabia = new Pais("Arabia Saudita", 0, true, "C", 0, 0, 0, 0, "ARA", 0, 0, 0);
+		Pais mexico = new Pais("Mexico", 0, true, "C", 0, 0, 0, 0, "MEX", 0, 0, 0);
+		Pais polonia = new Pais("Polonia", 0, true, "C", 0, 0, 0, 0, "POL", 0, 0, 0);
+		Pais francia = new Pais("Francia", 0, true, "D", 0, 0, 0, 0, "FRA", 0, 0, 0);
+		Pais australia = new Pais("Australia", 0, true, "D", 0, 0, 0, 0, "AUS", 0, 0, 0);
+		Pais dinamarca = new Pais("Dinamarca", 0, true, "D", 0, 0, 0, 0, "DIN", 0, 0, 0);
+		Pais tunez = new Pais("Tunez", 0, true, "D", 0, 0, 0, 0, "TUN", 0, 0, 0);
+		Pais españa = new Pais("España", 0, true, "E", 0, 0, 0, 0, "ESP", 0, 0, 0);
+		Pais alemania = new Pais("Alemania", 0, true, "E", 0, 0, 0, 0, "ALE", 0, 0, 0);
+		Pais costarica = new Pais("Costa Rica", 0, true, "E", 0, 0, 0, 0, "CRC", 0, 0, 0);
+		Pais japon = new Pais("Japon", 0, true, "E", 0, 0, 0, 0, "JAP", 0, 0, 0);
+		Pais belgica = new Pais("Belgica", 0, true, "F", 0, 0, 0, 0, "BEL", 0, 0, 0);
+		Pais canada = new Pais("Canada", 0, true, "F", 0, 0, 0, 0, "CAN", 0, 0, 0);
+		Pais marruecos = new Pais("Marruecos", 0, true, "F", 0, 0, 0, 0, "MAR", 0, 0, 0);
+		Pais croacia = new Pais("Croacia", 0, true, "F", 0, 0, 0, 0, "CRO", 0, 0, 0);
+		Pais brasil = new Pais("Brasil", 0, true, "G", 0, 0, 0, 0, "BRA", 0, 0, 0);
+		Pais serbia = new Pais("Serbia", 0, true, "G", 0, 0, 0, 0, "SER", 0, 0, 0);
+		Pais suiza = new Pais("Suiza", 0, true, "G", 0, 0, 0, 0, "SUI", 0, 0, 0);
+		Pais camerun = new Pais("Camerun", 0, true, "G", 0, 0, 0, 0, "CAM", 0, 0, 0);
+		Pais portugal = new Pais("Portugal", 0, true, "H", 0, 0, 0, 0, "POR", 0, 0, 0);
+		Pais ghana = new Pais("Ghana", 0, true, "H", 0, 0, 0, 0, "GHA", 0, 0, 0);
+		Pais uruguay = new Pais("Uruguay", 0, true, "H", 0, 0, 0, 0, "URU", 0, 0, 0);
+		Pais corea = new Pais("Corea del Sur", 0, true, "H", 0, 0, 0, 0, "COR", 0, 0, 0);
 		
 		
 		LinkedList<Pais> paises = new LinkedList<Pais>(); 
@@ -138,33 +142,30 @@ class Main {
 		Grupos (p, Grupog, ids=36, Partidog);
 		Grupos (p, Grupoh, ids=42, Partidoh);
 		String grupo="";
-		jugarPartido(Partidoa ,grupo);
+		double number = 1.444423;
+		jugarPartido(Partidoa ,grupo, Grupoa);
+		System.out.println(Grupoa);
+		Comparator <Pais> comp = Comparator.comparing(Pais::getPuntos).thenComparing(Pais::getDiferencia_goles).thenComparing(Pais::getGoles_favor);
+		Collections.sort(paises, comp.reversed());
+		Collections.sort(Grupoa, comp.reversed());
 		verRankingGrupo(paises, grupo);
-				
-		/* for (int i =0; i <6; i++) {
-			System.out.println(Partidoa.get(i).getId()); 
-		}
-		for (int i =0; i <6; i++) {
-			System.out.println(Partidob.get(i).getId()); 
-		}
-		for (int i =0; i <6; i++) {
-			System.out.println(Partidoc.get(i).getId()); 
-		}
-		for (int i =0; i <6; i++) {
-			System.out.println(Partidod.get(i).getId()); 
-		}
-		for (int i =0; i <6; i++) {
-			System.out.println(Partidoe.get(i).getId()); 
-		}
-		for (int i =0; i <6; i++) {
-			System.out.println(Partidof.get(i).getId()); 
-		}
-		for (int i =0; i <6; i++) {
-			System.out.println(Partidog.get(i).getId()); 
-		}
-		for (int i =0; i <6; i++) {
-			System.out.println(Partidoh.get(i).getId()); 
-		} */
+		System.out.println(Grupoa.get(0));
+		LinkedList<Pais> octavos = new LinkedList<Pais>();
+		avanzarFase(octavos, Grupoa);
+		avanzarFase(octavos, Grupob);
+		avanzarFase(octavos, Grupoc);
+		avanzarFase(octavos, Grupod);
+		avanzarFase(octavos, Grupoe);
+		avanzarFase(octavos, Grupof);
+		avanzarFase(octavos, Grupog);
+		avanzarFase(octavos, Grupoh);
+		
+		System.out.println(octavos);
+		
+		
+		
+		
+
 
 		/*
 		SISTEMA DE PARTIDOS / GRUPOS / LISTAS
@@ -240,24 +241,67 @@ class Main {
 		}		
 		}
 	
-	public static void jugarPartido(LinkedList<Partido> partidos, String grupo) {
+	public static void jugarPartido(LinkedList<Partido> partidos, String grupo, LinkedList<Pais> grupos) {
 		int p=0;
 		int gol_local, gol_visitante;
 		for (int i = 0; i<6; i++) {
 			partidos.get(i).setGol_local((int)(Math.random()*6));
 			partidos.get(i).setGol_visitante((int)(Math.random()*6));
 			p++;
-			System.out.println("Resultado partido " + p + "\n" + partidos.get(i).getGol_local() + " " +partidos.get(i) + " " + partidos.get(i).getGol_visitante());
+			partidos.get(i).setDuracion(Math.round(((Math.random()*10) + 90) * 100d) / 100d);
+			System.out.println("Resultado partido " + p + "\n" + partidos.get(i).getGol_local() + " " +partidos.get(i) + " " + partidos.get(i).getGol_visitante() + "  // Duracion del partido: " + partidos.get(i).getDuracion() + " min.");
 			gol_local = partidos.get(i).getGol_local();
 			gol_visitante = partidos.get(i).getGol_visitante();
 			partidos.get(i).getPais().setGoles_favor(partidos.get(i).getPais().getGoles_favor() + gol_local);
 			partidos.get(i).getPais2().setGoles_favor(partidos.get(i).getPais2().getGoles_favor() + gol_visitante);
 			partidos.get(i).getPais().setGoles_contra(partidos.get(i).getPais().getGoles_contra() + gol_visitante);
 			partidos.get(i).getPais2().setGoles_contra(partidos.get(i).getPais2().getGoles_contra() + gol_local);
+			if (partidos.get(i).getGol_local() > partidos.get(i).getGol_visitante()) {
+				partidos.get(i).getPais().setPuntos(partidos.get(i).getPais().getPuntos() + 3);
+				partidos.get(i).getPais().setPg(partidos.get(i).getPais().getPg()+1);
+				partidos.get(i).getPais2().setPp(partidos.get(i).getPais2().getPp()+1);
+			} else if (partidos.get(i).getGol_visitante() > partidos.get(i).getGol_local()) {
+				partidos.get(i).getPais2().setPuntos(partidos.get(i).getPais2().getPuntos() + 3);
+				partidos.get(i).getPais2().setPg(partidos.get(i).getPais2().getPg()+1);
+				partidos.get(i).getPais().setPp(partidos.get(i).getPais().getPp()+1);
+			} else {
+				partidos.get(i).getPais().setPuntos(partidos.get(i).getPais().getPuntos() + 1);
+				partidos.get(i).getPais2().setPuntos(partidos.get(i).getPais2().getPuntos() + 1);
+				partidos.get(i).getPais().setPe(partidos.get(i).getPais().getPe()+1);
+				partidos.get(i).getPais2().setPe(partidos.get(i).getPais2().getPe()+1);
+			}
 			
+		}
+		for (int i=0; i<4; i++) {
+			grupos.get(i).setDiferencia_goles(grupos.get(i).getGoles_favor()-grupos.get(i).getGoles_contra());
 		}
 	}
 	
+	public static void avanzarFase(LinkedList<Pais> Fase, LinkedList<Pais> grupo) {
+			Fase.add(grupo.get(0));
+			Fase.add(grupo.get(1));	
+	}		
+		
+		
+	
+	
+	
+	
+	///////////////////////////////////////////////////////////////////
+	public static void Octavos(LinkedList<Pais> paises) {
+		 Iterator<Pais> paisesIter = paises.listIterator();
+		 while(paisesIter.hasNext()) {
+		      boolean i = paisesIter.next().isClasificado();
+		      if(i == false) {
+		        paisesIter.remove();
+		      }
+		    }
+		 System.out.println(paises);
+		}
 	}
+
+
+	
+
 
 

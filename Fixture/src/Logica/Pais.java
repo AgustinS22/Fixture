@@ -1,8 +1,8 @@
 package Logica;
 
-import java.util.Arrays;
+import java.util.Comparator;
 
-public class Pais {
+public class Pais implements Comparable<Pais>{
 	private String nombre;
 	private int cant_gol ;
 	private boolean clasificado;
@@ -16,7 +16,7 @@ public class Pais {
 	private int diferencia_goles;
 	private int[] resultado = {0,0,0,0,0,0,0};
 	private String abr;
-	public Pais(String nombre, int cant_gol, boolean clasificado, String grupo, int puntos, int pg, int pp, int pe, String abr, int goles_favor,int goles_contra) {
+	public Pais(String nombre, int cant_gol, boolean clasificado, String grupo, int puntos, int pg, int pp, int pe, String abr, int goles_favor,int goles_contra, int diferencia_goles) {
 		super();
 		this.nombre = nombre;
 		this.cant_gol = goles_favor;
@@ -29,7 +29,7 @@ public class Pais {
 		this.abr = abr;
 		this.goles_favor = goles_favor;
 		this.goles_contra = goles_contra;
-		this.diferencia_goles = goles_favor - goles_contra;
+		this.diferencia_goles = diferencia_goles;
 	}
 	public int getGoles_favor() {
 		return goles_favor;
@@ -113,5 +113,11 @@ public class Pais {
 	public String toString() {
 		return nombre;
 	}
+	@Override
+	public int compareTo(Pais pais) {
+		return this.puntos - pais.getPuntos();
+	}
+
+	
 	
 }
