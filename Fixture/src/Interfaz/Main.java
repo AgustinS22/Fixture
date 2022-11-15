@@ -144,23 +144,84 @@ class Main {
 		String grupo="";
 		double number = 1.444423;
 		jugarPartido(Partidoa ,grupo, Grupoa);
-		System.out.println(Grupoa);
+		jugarPartido(Partidob ,grupo, Grupob);
+		jugarPartido(Partidoc ,grupo, Grupoc);
+		jugarPartido(Partidod ,grupo, Grupod);
+		jugarPartido(Partidoe ,grupo, Grupoe);
+		jugarPartido(Partidof ,grupo, Grupof);
+		jugarPartido(Partidog ,grupo, Grupog);
+		jugarPartido(Partidoh ,grupo, Grupoh);
+
+		//-System.out.println(Grupoa);
 		Comparator <Pais> comp = Comparator.comparing(Pais::getPuntos).thenComparing(Pais::getDiferencia_goles).thenComparing(Pais::getGoles_favor);
 		Collections.sort(paises, comp.reversed());
 		Collections.sort(Grupoa, comp.reversed());
-		verRankingGrupo(paises, grupo);
-		System.out.println(Grupoa.get(0));
-		LinkedList<Pais> octavos = new LinkedList<Pais>();
-		avanzarFase(octavos, Grupoa);
-		avanzarFase(octavos, Grupob);
-		avanzarFase(octavos, Grupoc);
-		avanzarFase(octavos, Grupod);
-		avanzarFase(octavos, Grupoe);
-		avanzarFase(octavos, Grupof);
-		avanzarFase(octavos, Grupog);
-		avanzarFase(octavos, Grupoh);
+		Collections.sort(Grupob, comp.reversed());
+		Collections.sort(Grupoc, comp.reversed());
+		Collections.sort(Grupod, comp.reversed());
+		Collections.sort(Grupoe, comp.reversed());
+		Collections.sort(Grupof, comp.reversed());
+		Collections.sort(Grupog, comp.reversed());
+		Collections.sort(Grupoh, comp.reversed());
 		
-		System.out.println(octavos);
+		System.out.println("Grupo A:" + Grupoa);
+		System.out.println("Grupo B:" + Grupob);
+		System.out.println("Grupo C:" +Grupoc);
+		System.out.println("Grupo D:" +Grupod);
+		System.out.println("Grupo E:" +Grupoe);
+		System.out.println("Grupo F:" +Grupof);
+		System.out.println("Grupo G:" +Grupog);
+		System.out.println("Grupo H:" +Grupoh);
+		
+		//verRankingGrupo(paises, grupo);
+		LinkedList<Pais> octavos = new LinkedList<Pais>();
+		LinkedList<Partido> partidoOctavos = new LinkedList<>();
+		/* for (int i = 0; i < 8; i++) {
+			Partido ps = new Partido(null, null, 0, 0, 0, 0);
+			partidoOctavos.add(ps);
+		} */
+		
+		avanzarFasePrimeros(octavos, Grupoa, partidoOctavos);
+		avanzarFasePrimeros(octavos, Grupob, partidoOctavos);
+		avanzarFasePrimeros(octavos, Grupoc, partidoOctavos);
+		avanzarFasePrimeros(octavos, Grupod, partidoOctavos);
+		avanzarFasePrimeros(octavos, Grupoe, partidoOctavos);
+		avanzarFasePrimeros(octavos, Grupof, partidoOctavos);
+		avanzarFasePrimeros(octavos, Grupog, partidoOctavos);
+		avanzarFasePrimeros(octavos, Grupoh, partidoOctavos);
+		avanzarFaseSegundos(octavos, Grupoa, partidoOctavos);
+		avanzarFaseSegundos(octavos, Grupob, partidoOctavos);
+		avanzarFaseSegundos(octavos, Grupoc, partidoOctavos);
+		avanzarFaseSegundos(octavos, Grupod, partidoOctavos);
+		avanzarFaseSegundos(octavos, Grupoe, partidoOctavos);
+		avanzarFaseSegundos(octavos, Grupof, partidoOctavos);
+		avanzarFaseSegundos(octavos, Grupog, partidoOctavos);
+		avanzarFaseSegundos(octavos, Grupoh, partidoOctavos);
+		
+		/* avanzarFase(octavos, Grupoa, partidoOctavos);
+		avanzarFase(octavos, Grupob, partidoOctavos);
+		avanzarFase(octavos, Grupoc, partidoOctavos);
+		avanzarFase(octavos, Grupod, partidoOctavos);
+		avanzarFase(octavos, Grupoe, partidoOctavos);
+		avanzarFase(octavos, Grupof, partidoOctavos);
+		avanzarFase(octavos, Grupog, partidoOctavos);
+		avanzarFase(octavos, Grupoh, partidoOctavos); */
+		
+
+		
+		System.out.println("Paises que pasaron a octavos: " + octavos);
+		System.out.println("Lista de partidos de octavos de final: " + partidoOctavos);
+		
+		/* 
+		 Hacer cruces para los partidos de octavos tiene que ser: 
+		 1ro Grupo A vs 2do Grupo B   /////////////// 1ro Grupo B vs 2do Grupo A 
+		 1ro Grupo C vs 2do Grupo D   /////////////// 1ro Grupo D vs 2do Grupo C
+		 1ro Grupo E vs 2do Grupo F   /////////////// 1ro Grupo F vs 2do Grupo E 
+		 1ro Grupo G vs 2do Grupo H   /////////////// 1ro Grupo H vs 2do Grupo G
+		 
+		 */
+		
+		
 		
 		
 		
@@ -244,12 +305,13 @@ class Main {
 	public static void jugarPartido(LinkedList<Partido> partidos, String grupo, LinkedList<Pais> grupos) {
 		int p=0;
 		int gol_local, gol_visitante;
+		System.out.println("Partidos grupo " + grupos.get(0).getGrupo());
 		for (int i = 0; i<6; i++) {
 			partidos.get(i).setGol_local((int)(Math.random()*6));
 			partidos.get(i).setGol_visitante((int)(Math.random()*6));
 			p++;
 			partidos.get(i).setDuracion(Math.round(((Math.random()*10) + 90) * 100d) / 100d);
-			System.out.println("Resultado partido " + p + "\n" + partidos.get(i).getGol_local() + " " +partidos.get(i) + " " + partidos.get(i).getGol_visitante() + "  // Duracion del partido: " + partidos.get(i).getDuracion() + " min.");
+			System.out.println("Resultado partido " + p + "\n" + partidos.get(i).getGol_local() + " " + partidos.get(i).getPais() + " - " + partidos.get(i).getPais2() + " " + partidos.get(i).getGol_visitante() + "  // Duracion del partido: " + partidos.get(i).getDuracion() + " min. \n");
 			gol_local = partidos.get(i).getGol_local();
 			gol_visitante = partidos.get(i).getGol_visitante();
 			partidos.get(i).getPais().setGoles_favor(partidos.get(i).getPais().getGoles_favor() + gol_local);
@@ -277,10 +339,38 @@ class Main {
 		}
 	}
 	
-	public static void avanzarFase(LinkedList<Pais> Fase, LinkedList<Pais> grupo) {
+	public static void avanzarFase(LinkedList<Pais> Fase, LinkedList<Pais> grupo, LinkedList<Partido> partidos) {
 			Fase.add(grupo.get(0));
 			Fase.add(grupo.get(1));	
-	}		
+			int tot;
+			for (int i =0; i < partidos.size(); i++) {
+				if (partidos.get(i).getPais() == null) {
+					partidos.get(i).setPais(grupo.get(0));
+					i = partidos.size();	
+					}
+				if (partidos.get(i).getPais2() == null && !partidos.get(i).getPais().getGrupo().equalsIgnoreCase(grupo.get(1).getGrupo()) && !partidos.get(i).getPais().getNombre().equalsIgnoreCase(grupo.get(1).getNombre())) {
+				partidos.get(i).setPais2(grupo.get(1));
+				i = partidos.size();	
+				}
+			}
+	}	
+	public static void avanzarFasePrimeros(LinkedList<Pais> Fase, LinkedList<Pais> grupo, LinkedList<Partido> partidos) {
+		Fase.add(grupo.get(0));
+		Partido partido;
+		partidos.add(new Partido(grupo.get(0), null, 0, 0, 0, 0));
+		
+	}	
+	
+	public static void avanzarFaseSegundos(LinkedList<Pais> Fase, LinkedList<Pais> grupo, LinkedList<Partido> partidos) {
+		Fase.add(grupo.get(1));
+		Partido partido;
+		for (int i =0; i < partidos.size(); i++) {			
+			if (partidos.get(i).getPais2() == null && !partidos.get(i).getPais().getGrupo().equalsIgnoreCase(grupo.get(1).getGrupo())) {
+			partidos.get(i).setPais2(grupo.get(1));
+			i = partidos.size();	
+			}
+		}
+	}
 		
 		
 	
