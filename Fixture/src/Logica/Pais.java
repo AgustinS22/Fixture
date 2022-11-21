@@ -2,7 +2,7 @@ package Logica;
 
 import java.util.Comparator;
 
-public class Pais implements Comparable<Pais>{
+public class Pais{
 	private String nombre;
 	private int cant_gol ;
 	private boolean clasificado;
@@ -11,12 +11,12 @@ public class Pais implements Comparable<Pais>{
 	private int pg;
 	private int pp;
 	private int pe;
+	private int pj;
 	private int goles_favor;
 	private int goles_contra;
 	private int diferencia_goles;
-	private int[] resultado = {0,0,0,0,0,0,0};
 	private String abr;
-	public Pais(String nombre, int cant_gol, boolean clasificado, String grupo, int puntos, int pg, int pp, int pe, String abr, int goles_favor,int goles_contra, int diferencia_goles) {
+	public Pais(String nombre, int cant_gol, boolean clasificado, String grupo, int puntos, int pg, int pp, int pe, int pj, String abr, int goles_favor,int goles_contra, int diferencia_goles) {
 		super();
 		this.nombre = nombre;
 		this.cant_gol = goles_favor;
@@ -103,20 +103,17 @@ public class Pais implements Comparable<Pais>{
 	public void setGrupo(String grupo) {
 		this.grupo = grupo;
 	}
-	public int[] getResultado() {
-		return resultado;
+	public int getPj() {
+		return pj;
 	}
-	public void setResultado(int[] resultado) {
-		this.resultado = resultado;
+	public void setPj(int pj) {
+		this.pj = pj;
 	}
 	@Override
 	public String toString() {
 		return nombre;
 	}
-	@Override
-	public int compareTo(Pais pais) {
-		return this.puntos - pais.getPuntos();
-	}
+
 
 	
 	
